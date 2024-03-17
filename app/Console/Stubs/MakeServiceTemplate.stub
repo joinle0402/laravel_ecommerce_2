@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Services\Interfaces\{{ ServiceInterface }};
+use App\Repositories\Interfaces\{{ RepositoryInterface }};
+
+class {{ ServiceClass }} implements {{ ServiceInterface }}
+{
+    public function __construct(protected {{ RepositoryInterface }} $repository) {}
+}

@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-
 use Illuminate\Console\GeneratorCommand;
 
 class MakeRepository extends GeneratorCommand
