@@ -10,6 +10,8 @@ use Illuminate\Contracts\View\View;
 
 class UserController extends Controller
 {
+    public function __construct(protected UserRepository $userRepository) {}
+
     public function index(): View
     {
         return view('admin.pages.user.index');
