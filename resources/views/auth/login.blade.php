@@ -14,18 +14,26 @@
     <div class="login-box">
         <div class="card card-outline card-primary">
             <div class="card-body">
-                <form action="#" method="post">
+                <form action="{{ route("auth.handleLogin") }}" method="POST">
+                    @csrf
+                    @method("POST")
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" @class(['form-control', 'is-invalid' => $errors->has('email')]) id="email" name="email" value="{{ old('email') }}">
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" @class(['form-control', 'is-invalid' => $errors->has('password')]) id="password" name="password" value="{{ old('password') }}">
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
                         </div>
                     </div>
                 </form>

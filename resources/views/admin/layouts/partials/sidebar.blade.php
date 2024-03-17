@@ -19,16 +19,22 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Widgets
-                        </p>
+                        <p>Dashboard</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+                <form id="logout-form" action="{{ route('auth.logout') }}" method="post">
+                    @csrf
+                    @method("POST")
+                </form>
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>
